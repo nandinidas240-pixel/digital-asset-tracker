@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow public reads to media_scans for the dashboard
+    // Deny client-side writes (backend Cloud Functions handle creation)
+    match /media_scans/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    // Default deny for everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

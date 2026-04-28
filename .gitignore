@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+functions/node_modules/
+
+# Environment variables (Secrets)
+.env
+functions/.env
+.env.local
+.env.*.local
+
+# Firebase specific
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Build and distribution
+frontend/dist/
+functions/lib/
+
+# IDE / System files
+.vscode/
+.DS_Store
+Thumbs.db
